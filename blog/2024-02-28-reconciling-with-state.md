@@ -28,7 +28,7 @@ During reconciliation, some asynchronous work is often required (frequently this
 During this time, depending on the provider and the needs of the application, it might be necessary to display loading indicators, or prevent users from taking action.
 Some frameworks have patterns or in-built functionality to support this, such as React's [suspense](https://react.dev/reference/react/Suspense).
 In order to leverage such features, we've added a new `RECONCILING` provider state and `PROVIDER_RECONCILING` provider event.
-These indicate the provider is in the process of reconciling it's internal state due to a context change.
+These indicate that the provider is reconciling its internal state due to a context change.
 Previously, something like this was achievable with the use of the STALE state and events, but we believed this was overloading the meaning of this state and didn't provide adequately robust semantics.
 
 ```mermaid
