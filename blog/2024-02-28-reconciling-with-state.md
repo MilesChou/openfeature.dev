@@ -72,7 +72,7 @@ This simplifies things for provider authors, and results in a uniform experience
 
 In some circumstances, providers may not be able to evaluate flags.
 This could be because a provider hasn't yet been fully initialized, or has experienced some internal error.
-Previously, provider-authors had to ensure their publicly exposed state was updated if such errors occurred, as well as emit an error event.
+Previously, provider authors had to ensure their publicly exposed state was updated if such errors occurred, as well as emit an error event.
 Furthermore, provider authors had to check with this state to accurately return an informative `error code` (ie: `PROVIDER_NOT_READY`) if evaluation was attempted in such states.
 With these recent changes, we've added a new `FATAL` error code, indicating that the provider has entered a irrecoverable error state (typically due to a bad credential, hostname or other value that's likely to represent a misconfiguration).
 Along with this helpful new state, implementations will now "short-circuit" evaluations if the provider is in `NOT_READY` or `FATAL` states.
